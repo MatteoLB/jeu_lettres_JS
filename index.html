@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeu JS</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+
+	<div id="screen1" class="screens">
+		<h1>Jeu JS</h1>
+
+		<p id="gameRules">Entrez la lettre ou le mot affiché à l'écran dans le temps imparti</p>
+
+		<div>
+			<button id="startButton">Lettres</button>
+			<button id="startButtonWords">Mots</button>
+		</div>
+	</div>
+
+	<div id="screen2" class="screens">
+		<header>
+			<h3>Lettres</h3>
+			<p id="life"><span id="lifeCaption">Vies :</span>
+				<span><i class="fas fa-heart heart1"></i><i class="far fa-heart heart2"></i></span>
+				<span><i class="fas fa-heart heart1"></i><i class="far fa-heart heart2"></i></span>
+				<span><i class="fas fa-heart heart1"></i><i class="far fa-heart heart2"></i></span>
+			</p>
+
+			<h2 id="scoreText">Score : 0</h2>
+
+			<div id="time">
+				<h3 id="countDownText">Temps restant : </h3>
+				
+				<div id="progressBarParent">
+					<div id="progressBar"></div>
+				</div>
+			</div>
+		</header>
+
+		<div id="game">
+			<p id="gameLetter"></p>
+			<div id="wordProgress"></div>
+			<p id="finalScore">Score final : </p>
+
+			<input type="text" name="mobileType" id="mobileInput">
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

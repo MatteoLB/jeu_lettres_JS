@@ -1,0 +1,462 @@
+body
+{
+	font-family: sans-serif;
+	/* color: #235a6e; */
+}
+
+.screens
+{
+	width: 970px;
+	margin: 0 auto;
+	margin-top: 100px;
+	box-shadow: 0px 3px 12px grey;
+	background-color: rgba(255,255,255,0.8);
+}
+
+#screen1
+{
+	position: relative;
+	z-index: 20;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px 0px 20px 0px;
+	font-size: 1.4rem;
+	
+}
+
+#screen1 h1
+{
+	margin-top: 40px;
+}
+
+
+#screen1 button
+{
+	
+	margin: 0px 8px 50px 8px;
+	font-size: 1.4rem;
+	border-radius: 10px;
+	padding: 18px 45px;
+	border: 1px solid #438198;
+	cursor: pointer;
+	background-color: #438198;
+	box-shadow: 0px 2px 20px silver;
+	font-weight: bold;
+	color: white;
+	transition: 0.3s;
+}
+
+#screen1 #startButton
+{
+	padding: 18px 35px;
+}
+
+#screen1 button:hover
+{
+	background-color: transparent;
+	color: #438198;
+	border: 1px solid #438198;
+}
+
+#gameRules
+{
+	margin-bottom: 40px;
+	border-bottom: 0px solid black;
+}
+
+
+/* ******************************************************************** SCREEN 2 ************************************************* */
+
+#screen2
+{
+	position: relative;
+	height: 360px;
+	z-index: 20;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	background-color: rgba(255,255,255,0.9);
+}
+
+#screen2 header
+{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	border-bottom: 1px solid black;
+	padding: 10px 0px 30px 0px;
+}
+
+#screen2 header h2, #screen2 header h3
+{
+	margin: 0;
+}
+
+#gameLetter
+{
+	margin-top: 80px;
+	font-size: 3.2rem;
+	margin-bottom: 20px;
+}
+
+#wordProgress
+{
+	background: linear-gradient(to right, black 70%, rgba(255,255,255,0.6));
+	height: 4px;
+	width: 0%;
+	display: none;
+	transition: 0.1s;
+}
+
+#time
+{
+	display: flex;
+	align-items: center;
+}
+
+#progressBarParent
+{
+	width: 100px;
+	margin-top: 3px;
+	margin-left: 5px;
+}
+
+#progressBar
+{	
+	background-color: #2570a5;
+	height: 13px;
+	width: 100%;
+	transition: 0.1s;
+}
+
+#life
+{
+	font-size: 1.2rem;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+#life .heart2
+{
+	display: none;
+	color: red;
+	font-size: 1rem;
+}
+
+#life .heart1
+{
+	color: red;
+	font-size: 1rem;
+}
+
+#finalScore
+{
+	display: none;
+	font-size: 2rem;
+	animation: finalScoreAppearing 0.7s;
+}
+
+.disappearingLetter
+{
+	animation: disappearing 0.15s;
+}
+
+.wrongLetter
+{
+	animation: wrong 0.1s;
+}
+
+#game .gameOver
+{
+	animation: gameOver 1.4s forwards;
+	padding: 0px 20px 10px 20px;
+	color: black;
+	margin-top: 51px;
+}
+
+#mobileInput
+{
+	display: none;
+}
+
+
+/* ********************************************************************** ANIMATIONS ************************************************************************** */
+
+@keyframes disappearing
+{
+	0%
+	{
+		transform: scale(1.2);
+		opacity: 0.8;
+	}
+	100%
+	{
+		transform: scale(3);
+		opacity: 0;
+	}
+}
+
+@keyframes disappearingMobile
+{
+	0%
+	{
+		opacity: 0.8;
+	}
+	100%
+	{
+		opacity: 0;
+	}
+}
+
+@keyframes wrong
+{
+	0%
+	{
+		transform: translateY(0px);
+		transform: translateX(0px);
+	}
+	10%
+	{
+		transform: translateX(-6px;);
+	}
+	20%
+	{
+		transform: translateX(6px);
+	}
+	30%
+	{
+		transform: translateX(-5px);
+		transform: translateY(-4px);
+	}
+	40%
+	{
+		transform: translateX(5px);
+	}
+	50%
+	{
+		transform: translateX(-4px);
+	}
+	60%
+	{
+		transform: translateX(4px);
+		transform: translateY(4px);
+	}
+	70%
+	{
+		transform: translateX(-3px);
+	}
+	90%
+	{
+		transform: translateX(3px;);
+	}
+	100%
+	{
+		transform: translateX(0px);
+		transform: translateY(0px);
+	}
+}
+
+@keyframes gameOver
+{
+	0%
+	{
+		transform: scale(1.5);
+		text-shadow: 0px 10px 4px silver;
+		border-bottom: 3px solid transparent;
+	}
+	80%
+	{
+		transform: scale(1.5);
+		text-shadow: 0px 10px 4px silver;
+		border-bottom: 3px solid transparent;		
+	}
+	100%
+	{
+		transform: scale(1);
+		text-shadow: none;
+		border-bottom: 3px solid black;
+	}
+}
+
+@keyframes finalScoreAppearing
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	50%
+	{
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	100%
+	{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+
+#canvas
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	background-color: #b5cbd7; /* #94afbe */
+	/*display: none;*/
+}
+
+
+/* **************************************************************************** MOBILE **************************************************************** */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+{
+	#canvas
+	{
+		display: none;
+	}
+
+	body
+	{
+		background-color: #f8fafb;
+	}
+
+	div.screens
+	{
+		width: 100%;
+		box-shadow: none;	
+  		margin-top: 0px;
+  		height: 100%;
+  		background-color: transparent;
+	}
+
+	#screen1
+	{
+		position: absolute;
+		top: 0px;
+  		padding: 0px;
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+	}
+
+	#screen1 h1
+	{
+		font-size: 6.5rem;
+		margin-top: 0px;
+	}
+
+	#gameRules
+	{
+		font-size: 3.2rem;
+		text-align: center;
+		margin: 30px 0px 100px 0px;
+		padding: 40px;
+	}
+
+	#screen1 button
+	{
+		font-size: 4rem;
+		padding: 40px 100px;
+		margin: 30px 20px;
+		border-radius: 100px;
+	}
+
+	#screen1 #startButton
+	{
+		padding: 40px 70px;
+
+	}
+
+	#screen2
+	{
+		position: absolute;
+  		top: 0px;
+  		height: 100%;
+	}
+
+	#screen2 header
+	{
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-top: 60px;
+		border-bottom: none;
+	}
+
+	#screen2 #lifeCaption, #screen2 #countDownText
+	{
+		display: none;
+	}
+
+	#screen2 header h3, #screen2 #life, #screen2 #scoreText
+	{
+		font-size: 550%;
+		margin-bottom: 40px;
+		margin-top: 0px;
+	}
+
+	#screen2 #life .heart1, #screen2 #life .heart2
+	{
+		font-size: 100%;
+	}
+
+	#screen2 #time
+	{
+		width: 60%;
+		margin-bottom: 50px;		
+	}
+
+	#progressBarParent
+	{
+		width: 100%;
+		border: 1px solid black;
+		border-radius: 100px;
+	}
+
+	#progressBar
+	{
+		height: 40px;
+		border-radius: 100px;
+	}
+
+	#gameLetter
+	{
+		margin-top: 180px;
+		font-size: 15rem;
+	}
+
+	#game .wordsMode
+	{
+		font-size: 8rem;
+	}
+
+	#game .wordsMode.disappearingLetter
+	{
+		animation: disappearingMobile 0.15s;
+	}
+
+	#game .gameOver
+	{
+		font-size: 6.5rem;
+		margin-top: 180px;
+	}
+
+	#game #finalScore
+	{
+		font-size: 4rem;
+	}
+
+	#mobileInput
+	{
+		display: block;
+		opacity: 0;
+		caret-color: transparent;
+	}
+}
